@@ -83,15 +83,15 @@ sudo su root -c "chmod +x /opt/pentaho/biserver-ce/*.sh"
 echo -e "Changing the HSQL to PostgreSQL"
 echo -e "* Change the pentaho tomcat context.xml file (/opt/pentaho/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml)"
 sudo sed -i s/"org.hsqldb.jdbcDriver"/"org.postgresql.Driver"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
-sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/hibernate"/"jdbc:postgresql\/\/localhost:5432\/hibernate"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
+sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/hibernate"/"jdbc:postgresql:\/\/localhost:5432\/hibernate"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
 sudo sed -i s/"select count(\*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/"select 1"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
 sudo sed -i s/"org.hsqldb.jdbcDriver"/"org.postgresql.Driver"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
-sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/quartz"/"jdbc:postgresql\/\/localhost:5432\/quartz"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
+sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/quartz"/"jdbc:postgresql:\/\/localhost:5432\/quartz"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
 sudo sed -i s/"select count(\*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/"select 1"/g $PENT_HOME/biserver-ce/tomcat/webapps/pentaho/META-INF/context.xml
 
 echo -e "* Change the hibernate config files (/opt/pentaho/biserver-ce/pentaho-solutions/system/applicationContext-spring-security-hibernate.properties)"
 sudo sed -i s/"org.hsqldb.jdbcDriver"/"org.postgresql.Driver"/g $PENT_HOME/biserver-ce/pentaho-solutions/system/applicationContext-spring-security-hibernate.properties
-sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/hibernate"/"jdbc:postgresql\/\/localhost:5432\/hibernate"/g $PENT_HOME/biserver-ce/pentaho-solutions/system/applicationContext-spring-security-hibernate.properties
+sudo sed -i s/"jdbc:hsqldb:hsql:\/\/localhost\/hibernate"/"jdbc:postgresql:\/\/localhost:5432\/hibernate"/g $PENT_HOME/biserver-ce/pentaho-solutions/system/applicationContext-spring-security-hibernate.properties
 
 echo -e "* Change the hibernate config files (/opt/pentaho/biserver-ce/pentaho-solutions/system/hibernate/hibernate-settings.xml)"
 sudo sed -i s/"system\/hibernate\/hsql.hibernate.cfg.xml"/"system\/hibernate\/postgresql.hibernate.cfg.xml"/g $PENT_HOME/biserver-ce/pentaho-solutions/system/hibernate/hibernate-settings.xml
