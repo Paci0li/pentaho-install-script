@@ -36,7 +36,6 @@ echo -e "\n---- Install PostgreSQL Server $PG_VERSION  ----"
 #sudo su root -c "echo 'Pin: release o=apt.postgresql.org' >> /etc/apt/preferences.d/pgdg.pref"
 #sudo su root -c "echo 'Pin-Priority: 500' >> /etc/apt/preferences.d/pgdg.pref"
 yes | sudo apt-get update
-yes | sudo apt-get install pgdg-keyring
 yes | sudo apt-get install postgresql-$PG_VERSION
 	
 echo -e "\n---- PostgreSQL $PG_VERSION Settings  ----"
