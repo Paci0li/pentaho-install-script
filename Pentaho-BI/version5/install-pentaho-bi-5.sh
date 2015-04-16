@@ -132,8 +132,8 @@ echo '# Description: Pentaho BI Server' >> ~/$PENT_CONFIG
 echo '### END INIT INFO' >> ~/$PENT_CONFIG
 echo '' >> ~/$PENT_CONFIG
 echo "export BISERVER_HOME=$PENT_HOME/biserver-ce" >> ~/$PENT_CONFIG
-echo 'export JAVA_HOME="/usr/lib/jvm/java-1.6.0-openjdk-amd64"' >> ~/$PENT_CONFIG
-echo 'export JRE_HOME="/usr/lib/jvm/java-1.6.0-openjdk-amd64/jre"' >> ~/$PENT_CONFIG
+echo 'export JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-i386"' >> ~/$PENT_CONFIG
+echo 'export JRE_HOME="/usr/lib/jvm/java-1.6.0-openjdk-i386/jre"' >> ~/$PENT_CONFIG
 echo '' >> ~/$PENT_CONFIG
 echo 'case "$1" in' >> ~/$PENT_CONFIG
 echo ''start')' >> ~/$PENT_CONFIG
