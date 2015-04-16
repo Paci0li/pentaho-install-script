@@ -23,17 +23,18 @@ PENT_HOME="/opt/pentaho"
 PENT_CONFIG="pentaho-server"
 
 #choose postgresql version [8.4, 9.1, 9.2 or 9.3]
-PG_VERSION="9.2"
+PG_VERSION="9.3"
 
 #--------------------------------------------------
 # Install PostgreSQL Server
 #--------------------------------------------------
 echo -e "\n---- Install PostgreSQL Server $PG_VERSION  ----"
-sudo wget -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-sudo su root -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' >> /etc/apt/sources.list.d/pgdg.list"
-sudo su root -c "echo 'Package: *' >> /etc/apt/preferences.d/pgdg.pref"
-sudo su root -c "echo 'Pin: release o=apt.postgresql.org' >> /etc/apt/preferences.d/pgdg.pref"
-sudo su root -c "echo 'Pin-Priority: 500' >> /etc/apt/preferences.d/pgdg.pref"
+#Uncomment the following lines to active the official postgres repo
+#sudo wget -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+#sudo su root -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' >> /etc/apt/sources.list.d/pgdg.list"
+#sudo su root -c "echo 'Package: *' >> /etc/apt/preferences.d/pgdg.pref"
+#sudo su root -c "echo 'Pin: release o=apt.postgresql.org' >> /etc/apt/preferences.d/pgdg.pref"
+#sudo su root -c "echo 'Pin-Priority: 500' >> /etc/apt/preferences.d/pgdg.pref"
 yes | sudo apt-get update
 yes | sudo apt-get install pgdg-keyring
 yes | sudo apt-get install postgresql-$PG_VERSION
