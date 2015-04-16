@@ -62,9 +62,9 @@ sudo adduser --system --quiet --shell=/bin/bash --home=$PENT_HOME --gecos 'Penta
 #--------------------------------------------------
 echo -e "\n==== Installing Pentaho Server ===="
 
-echo -e "\n---- Getting latest stable from sourceforge ----"
-sudo su root -c "wget http://freefr.dl.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/5.0.1-stable/biserver-ce-5.0.1-stable.zip"
-sudo su root -c "unzip biserver-ce-5.0.1-stable.zip -d $PENT_HOME"
+echo -e "\n---- Getting latest from sourceforge ----"
+sudo su root -c "wget http://downloads.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/5.3/biserver-ce-5.3.0.0-213.zip"
+sudo su root -c "unzip biserver-ce-5.3.0.0-213.zip -d $PENT_HOME"
 
 echo -e "* Setup PostgreSQL Server for Pentaho"
 sudo su postgres -c "psql -a -f $PENT_HOME/biserver-ce/data/postgresql/create_quartz_postgresql.sql"
