@@ -49,10 +49,10 @@ sudo su - postgres -c "createuser -s $PENT_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install packages ----"
-yes | sudo apt-get install wget openjdk-6-jdk unzip
+yes | sudo apt-get install wget openjdk-7-jdk unzip
         
 echo -e "\n---- Set environment ----"
-sudo su root -c "echo 'export JAVA_HOME=\"/usr/lib/jvm/java-1.6.0-openjdk-amd64\"' >> /etc/environment"
+sudo su root -c "echo 'export JAVA_HOME=\"/usr/lib/jvm/java-1.7.0-openjdk-i386\"' >> /etc/environment"
         
 echo -e "\n---- Create Pentaho system user ----"
 sudo adduser --system --quiet --shell=/bin/bash --home=$PENT_HOME --gecos 'Pentaho' --group $PENT_USER
