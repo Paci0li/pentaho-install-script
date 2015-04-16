@@ -72,10 +72,10 @@ sudo su postgres -c "psql -a -f $PENT_HOME/biserver-ce/data/postgresql/create_re
 sudo su postgres -c "psql -a -f $PENT_HOME/biserver-ce/data/postgresql/create_repository_postgresql.sql"
 
 echo -e "* Add PostgreSQL JDBC driver to Pentaho Server"
-sudo su root -c "wget jdbc.postgresql.org/download/postgresql-9.2-1003.jdbc4.jar"
-sudo su root -c "mv postgresql-9.2-1003.jdbc4.jar /usr/share/java/postgresql-9.2-1003.jdbc4.jar"
-sudo su root -c "ln -s /usr/share/java/postgresql-9.2-1003.jdbc4.jar /usr/share/java/postgresql-9.2-jdbc4.jar "
-sudo su root -c "ln -s /usr/share/java/postgresql-9.2-jdbc4.jar $PENT_HOME/biserver-ce/tomcat/lib/postgresql-9.2-jdbc4.jar"
+sudo su root -c "wget https://jdbc.postgresql.org/download/postgresql-9.3-1103.jdbc3.jar"
+sudo su root -c "mv postgresql-9.3-1103.jdbc3.jar /usr/share/java/postgresql-9.3-1103.jdbc3.jar"
+sudo su root -c "ln -s /usr/share/java/postgresql-9.3-1103.jdbc3.jar /usr/share/java/postgresql-9.3-1103.jdbc3.jar "
+sudo su root -c "ln -s /usr/share/java/postgresql-9.3-1103.jdbc3.jar $PENT_HOME/biserver-ce/tomcat/lib/postgresql-9.3-1103.jdbc3.jar"
 
 echo -e "* Making the .sh files executable"
 sudo su root -c "chmod +x /opt/pentaho/biserver-ce/*.sh"
