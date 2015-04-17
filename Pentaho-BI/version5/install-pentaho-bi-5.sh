@@ -36,7 +36,7 @@ echo -e "\n---- Install PostgreSQL Server $PG_VERSION  ----"
 #sudo su root -c "echo 'Pin: release o=apt.postgresql.org' >> /etc/apt/preferences.d/pgdg.pref"
 #sudo su root -c "echo 'Pin-Priority: 500' >> /etc/apt/preferences.d/pgdg.pref"
 sudo apt-get update
-yes | sudo apt-get install postgresql-$PG_VERSION
+sudo apt-get install -y postgresql-$PG_VERSION
 	
 echo -e "\n---- PostgreSQL $PG_VERSION Settings  ----"
 sudo sed -i s/"#listen_addresses = 'localhost'"/"listen_addresses = '*'"/g /etc/postgresql/$PG_VERSION/main/postgresql.conf
@@ -48,7 +48,7 @@ sudo su - postgres -c "createuser -s $PENT_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install packages ----"
-yes | sudo apt-get install wget openjdk-7-jdk unzip
+sudo apt-get install -y wget openjdk-7-jdk unzip
         
 echo -e "\n---- Set environment ----"
 sudo su root -c "echo 'export JAVA_HOME=\"/usr/lib/jvm/java-1.7.0-openjdk-i386\"' >> /etc/environment"
