@@ -48,7 +48,7 @@ sudo su - postgres -c "createuser -s $PENT_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install packages ----"
-sudo apt-get install -y wget openjdk-7-jdk unzip
+sudo apt-get install -y wget openjdk-7-jdk-headless unzip
         
 echo -e "\n---- Set environment ----"
 sudo su root -c "echo 'export JAVA_HOME=\"/usr/lib/jvm/java-1.7.0-openjdk-i386\"' >> /etc/environment"
