@@ -48,7 +48,7 @@ sudo su - postgres -c "createuser -s $PENT_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install packages ----"
-sudo apt-get install -y wget openjdk-7-jdk-headless unzip
+sudo apt-get install -y wget openjdk-7-jre-headless unzip
         
 echo -e "\n---- Set environment ----"
 sudo su root -c "echo 'export JAVA_HOME=\"/usr/lib/jvm/java-1.7.0-openjdk-i386\"' >> /etc/environment"
@@ -62,7 +62,7 @@ sudo adduser --system --quiet --shell=/bin/bash --home=$PENT_HOME --gecos 'Penta
 echo -e "\n==== Installing Pentaho Server ===="
 
 echo -e "\n---- Getting stable from sourceforge ----"
-sudo su root -c "http://downloads.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/5.0.1-stable/biserver-ce-5.0.1-stable.zip"
+sudo su root -c "wget http://downloads.sourceforge.net/project/pentaho/Business%20Intelligence%20Server/5.0.1-stable/biserver-ce-5.0.1-stable.zip"
 sudo su root -c "unzip biserver-ce-5.0.1-stable.zip -d $PENT_HOME"
 
 echo -e "* Setup PostgreSQL Server for Pentaho"
